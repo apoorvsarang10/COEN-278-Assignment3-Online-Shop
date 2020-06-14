@@ -1,0 +1,67 @@
+// Place all the styles related to the Phones controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.phones {
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            }
+
+    table tr td {
+            padding: 10px;
+            vertical-align: top;
+            }
+
+    .list_image {
+            width:  90px;
+            height: 180px;
+            }
+
+    .list_description {
+          width: 80%;
+
+        dl {
+            margin: 0;
+            }
+
+        dt {
+            color:        #244;
+            font-weight:  bold;
+            font-size:    larger;
+            }
+
+        dd {
+            margin: 0;
+            }
+        }
+
+    .list_actions {
+            font-size:    12px;
+            text-align:   right;
+            padding-left: 1em;
+                    }
+
+    .list_line_even {
+            background:   #e1e1e1;
+            }
+
+    .list_line_odd {
+            background:   #e6cced;
+            }
+    a {
+      color: #000;
+
+      &:visited {
+        color: #666;
+      }
+
+      
+    }   
+}
+.phones a:hover {
+        color: #000;
+        background-color: #fff;
+      }
+        /* END_HIGHLIGHT */
+

@@ -1,0 +1,63 @@
+<%= form_with(model: phone, local: true) do |form| %>
+  <% if phone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(phone.errors.count, "error") %> prohibited this phone from being saved:</h2>
+
+      <ul>
+      <% phone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :phone_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :display, "Display (in Inches)" %>
+    <%= form.text_field :display, id: :phone_display %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ram, "RAM (in GB)" %>
+    <%= form.number_field :ram, id: :phone_ram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memory, "Memory (in GB)"%>
+    <%= form.number_field :memory, id: :phone_memory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor %>
+    <%= form.text_field :processor, id: :phone_processor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :front_camera %>
+    <%= form.text_field :front_camera, id: :phone_front_camera %>
+  </div>
+
+  <div class="field">
+    <%= form.label :back_camera %>
+    <%= form.text_field :back_camera, id: :phone_back_camera %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :phone_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <!--%= form.text_field :image, id: :phone_image %-->
+    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg, image/gif'%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

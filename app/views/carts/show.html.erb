@@ -1,0 +1,28 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<h3>Items in your shopping cart:</h3>
+<!--
+<ul>
+    <% @cart.lineitems.each do |item| %>
+        <li> <%= item.phone.name %> - <%= item.quantity %> </li>
+    <% end %>
+</ul>-->
+
+<table>
+    <%  @cart.lineitems.each do |item| %>
+    <tr>
+        <td> <%= item.phone.name %> </td>
+        <td> <%= item.quantity %> </td>
+        <td class="item_price"> <%= item.phone.price %> </td>
+    </tr>
+    <% end %>
+    <tr class = "total_price">
+        <td colspan = "2"> Total </td>
+        <td class = "total_cell"> <%= @cart.total_price %></td>
+    </tr>
+</table>
+
+
+<%= button_to 'Empty Cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} %> |
+<%= link_to 'Back', user_path %>

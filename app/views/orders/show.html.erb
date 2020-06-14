@@ -1,0 +1,51 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Paytype:</strong>
+  <%= @order.paytype %>
+</p>
+
+<br>
+<table>
+    <thead>
+        <tr class = "border_bottom">
+          <th>Phone Name</th>
+          <th>Qty</th>
+          <th>Price</th>
+        </tr>
+    </thead>
+        <tbody>
+            <% @order.lineitems.each do |item| %>
+                <tr>
+                    <td> <%= item.phone.name %> </td>
+                    <td> <%= item.quantity %> </td>
+                    <td class="item_price"> $<%= item.phone.price %> </td>
+                </tr>
+            <% end %>
+            <tr class = "border_top">
+                <td colspan = "2"> Total </td>
+                <td class = "total_cell"> $<%= @order.total_price %></td>
+            </tr>
+        <tbody>
+</table>
+<br>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

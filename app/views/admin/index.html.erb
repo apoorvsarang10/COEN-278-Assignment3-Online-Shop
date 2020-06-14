@@ -1,0 +1,7 @@
+<% if notice %>
+    <pid="notice"><%= notice %></p>
+<% end %>
+
+<h1>Welcome</h1>
+<h3>It's <%= Time.now %></h3><br>                                                                                                
+<h3>We have <%= pluralize(@total_orders, "order") %>.</h3>

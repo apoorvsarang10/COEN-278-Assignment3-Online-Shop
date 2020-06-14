@@ -1,0 +1,41 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Phones Catalog</h1>
+
+<table class="entry">
+ 
+  <tbody>
+    <% @phones.each do |phone| %>
+      <tr>
+        <td style="text-align: center;">
+            <% if phone.image.attached? %>
+                <img src = "<%= (url_for(phone.image)) %>", class="list_image">
+            <% end %>
+        </td>
+        <td>
+            <b style="font-size: 16px;">Name: <i><%= phone.name %></i></b><br><br>
+            <b>Ram(in GB):</b> <%= phone.ram %><br><br>
+            <b>Display(in inches):</b> <%= phone.display %><br><br>
+            <b class="price" >Price: $<%= phone.price %></b>
+        </td>
+        <td>
+            <br><br>
+            <b>Memory(in GB):</b> <%= phone.memory %><br><br>
+            <b>Front Camera:</b> <%= phone.front_camera %><br><br>
+            <%=  button_to 'Add To Cart', lineitems_path(product_id: phone), class: "add_to_cart", remote:true %>
+        </td>
+        <td>
+            <br><br>
+            <b>Processor:</b> <%= phone.processor %><br><br>
+            <b>Rear Camera:</b> <%= phone.back_camera %><br><br>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Phone', new_phone_path %>
