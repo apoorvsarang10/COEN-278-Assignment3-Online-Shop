@@ -45,6 +45,22 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
+    aws-eventstream (1.1.0)
+    aws-partitions (1.329.0)
+    aws-sdk-core (3.100.0)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.239.0)
+      aws-sigv4 (~> 1.1)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.34.1)
+      aws-sdk-core (~> 3, >= 3.99.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.68.1)
+      aws-sdk-core (~> 3, >= 3.99.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.1)
+    aws-sigv4 (1.1.4)
+      aws-eventstream (~> 1.0, >= 1.0.2)
     bcrypt (3.1.13)
     bindex (0.8.1)
     builder (3.2.4)
@@ -76,6 +92,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    jmespath (1.4.0)
     loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -89,6 +106,7 @@ GEM
     minitest (5.14.1)
     nio4r (2.5.2)
     nokogiri (1.11.0.rc2-x64-mingw32)
+    pg (1.2.3-x64-mingw32)
     public_suffix (4.0.5)
     puma (3.12.6)
     rack (2.2.2)
@@ -174,11 +192,13 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage
+  aws-sdk-s3
   bcrypt (~> 3.1.7)
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
+  pg
   puma (~> 3.7)
   rails (~> 5.2, >= 5.2.3)
   sass-rails (~> 5.0)

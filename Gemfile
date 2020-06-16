@@ -8,6 +8,8 @@ end
 group :production do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'pg'
+  
+  gem "aws-sdk-s3", require: false
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
