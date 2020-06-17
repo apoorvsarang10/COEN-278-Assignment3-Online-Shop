@@ -23,7 +23,7 @@
     text-align: center;
 
     img {
-        float: left;
+        float: inherit;
     }
 }
 
